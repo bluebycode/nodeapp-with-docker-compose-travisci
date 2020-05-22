@@ -1,5 +1,10 @@
 'use strict';
 const express = require('express');
 const app = express();
-app.listen(8080, function() {});
-
+const debug = require('debug')
+app.get('/', (_, res) => {
+    res.send('OK.');
+});
+module.exports = app.listen(8080, function() {
+    debug('listening 8080')
+});
