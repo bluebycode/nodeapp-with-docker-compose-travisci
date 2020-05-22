@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  app:
+    build: .
+    ports:
+        - "8080:8080"
+        - "9229:9229"
+    command: sh -c "./wait && npm start"
+volumes:
+  data:
